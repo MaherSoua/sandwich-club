@@ -21,21 +21,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, sandwiches);
-
+        // LinearLayout for RecyclerView
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
+        // Using RecyclerView instead of ListView
         RecyclerView recyclerView = findViewById(R.id.listContainer);
         SandwichAdapter sandwichAdapter = new SandwichAdapter(this, sandwiches);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(sandwichAdapter);
-    }
-
-    private void launchDetailActivity(int position) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(DetailActivity.EXTRA_POSITION, position);
-        startActivity(intent);
     }
 }
