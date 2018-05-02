@@ -23,14 +23,14 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.ListVi
     private String[] mSandwichList;
     private static String TAG = "SandwicthAdapter";
 
-    public SandwichAdapter(Context context, String[] sandwichList){
+    public SandwichAdapter(Context context, String[] sandwichList) {
         mContext = context;
         mSandwichList = sandwichList;
     }
 
     @Override
     public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from (mContext).inflate(R.layout.sandwich_list_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.sandwich_list_item, parent, false);
         return new ListViewHolder(view);
     }
 
@@ -45,7 +45,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.ListVi
         return mSandwichList.length;
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView textView;
         private int mPosition;
@@ -58,12 +58,12 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.ListVi
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(mContext, DetailActivity.class );
+            Intent intent = new Intent(mContext, DetailActivity.class);
             intent.putExtra(DetailActivity.EXTRA_POSITION, mPosition);
             mContext.startActivity(intent);
         }
 
-        public void setPosition(int position){
+        public void setPosition(int position) {
             mPosition = position;
         }
     }

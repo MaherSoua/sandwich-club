@@ -75,10 +75,10 @@ public class DetailActivity extends AppCompatActivity {
 
     }
 
-    private String arrayStringToString(List<String> array){
+    private String arrayStringToString(List<String> array) {
         StringBuilder stringBuilder = new StringBuilder();
-        for( int i =0 ; i < array.size(); i++){
-            if(i > 0){
+        for (int i = 0; i < array.size(); i++) {
+            if (i > 0) {
                 stringBuilder.append(", ");
             }
             stringBuilder.append(array.get(i));
